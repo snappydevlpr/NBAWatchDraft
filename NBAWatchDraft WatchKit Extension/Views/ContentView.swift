@@ -15,19 +15,21 @@ struct ContentView: View {
                 //
                 NavigationLink(destination:EmptyView()){
                     ZStack{
-                        Image("draft-menubackground")
-                        
+                        Image("draft-menu-background")
+                            .resizable()
+                    
                         VStack(){
                             Text("Round")
                                 .custom(font: .bold, size: 16)
                             Text("1")
                                 .custom(font: .ultralight, size: 70)
-                        }.offset(x: -10, y: 10)
+                        }.offset(x:-10, y: 10)
                     }
                 }.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                    .listRowBackground(background)
             }
         }.listStyle(CarouselListStyle())
-            .navigationBarTitle("NBA Draft")
+            .navigationBarTitle(Text("NBA Draft"))
     }
     
     var background:some View{
